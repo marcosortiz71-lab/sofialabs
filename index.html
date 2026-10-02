@@ -7,14 +7,25 @@
   <meta name="description" content="SofIA Labs: servicios de Inteligencia Artificial aplicados al marketing digital, los procesos de venta y la implementación de CRM." />
   <meta property="og:title" content="SofIA Labs | Innovation & Knowledge Solutions" />
   <meta property="og:description" content="Inteligencia Artificial aplicada al marketing digital, los procesos de venta y la implementación de CRM." />
-  <meta property="og:image" content="assets/logo-sofialabs.png" />
+  <meta property="og:image" content="logo-sofialabs.png" />
   <meta name="theme-color" content="#131c4f" />
-  <link rel="icon" type="image/png" href="assets/favicon.png" />
-  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <link rel="apple-touch-icon" href="apple-touch-icon.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* Logo animado del hero: bordes difuminados para fundirse con el fondo */
+    .hero__video {
+      width: min(760px, 100%); height: auto; aspect-ratio: 1200 / 482; object-fit: cover;
+      --fade-x: linear-gradient(to right, transparent 0, #000 10%, #000 90%, transparent 100%);
+      --fade-y: linear-gradient(to bottom, transparent 0, #000 16%, #000 84%, transparent 100%);
+      -webkit-mask-image: var(--fade-x), var(--fade-y); -webkit-mask-composite: source-in;
+              mask-image: var(--fade-x), var(--fade-y); mask-composite: intersect;
+      margin-bottom: 1.5rem;
+    }
+  </style>
 </head>
 <body>
 
@@ -22,7 +33,7 @@
   <header class="nav" id="top">
     <div class="container nav__inner">
       <a href="#top" class="nav__brand" aria-label="SofIA Labs, inicio">
-        <img src="assets/logo-sl.png" alt="" width="40" height="40" />
+        <img src="logo-sl.png" alt="" width="40" height="40" />
         <span>sof<b>IA</b>labs</span>
       </a>
       <button class="nav__toggle" aria-label="Abrir menú" aria-expanded="false">
@@ -42,7 +53,11 @@
     <section class="hero">
       <div class="hero__bg" aria-hidden="true"></div>
       <div class="container hero__inner">
-        <img class="hero__logo reveal" src="assets/logo-sofialabs.png" alt="SofIA Labs — Innovation & Knowledge Solutions" width="1400" height="453" />
+        <video class="hero__logo hero__video reveal" autoplay muted loop playsinline preload="auto" poster="logo-hero-poster.jpg" width="1200" height="482" aria-label="SofIA Labs — Innovation &amp; Knowledge Solutions">
+          <source src="logo-hero.webm" type="video/webm" />
+          <source src="logo-hero.mp4" type="video/mp4" />
+          <img src="logo-sofialabs.png" alt="SofIA Labs — Innovation &amp; Knowledge Solutions" width="1400" height="453" />
+        </video>
         <h1 class="reveal">Inteligencia Artificial que <span class="grad">vende, atiende y hace crecer</span> tu negocio.</h1>
         <p class="hero__lead reveal">Aplicamos IA al marketing digital, a los procesos de venta y a la implementación de CRM para que tu equipo trabaje con datos, automatice lo repetitivo y dedique su tiempo a cerrar negocios.</p>
         <div class="hero__cta reveal">
@@ -214,7 +229,7 @@
 
   <footer class="footer">
     <div class="container footer__inner">
-      <a href="#top" class="nav__brand"><img src="assets/logo-sl.png" alt="" width="32" height="32" /><span>sof<b>IA</b>labs</span></a>
+      <a href="#top" class="nav__brand"><img src="logo-sl.png" alt="" width="32" height="32" /><span>sof<b>IA</b>labs</span></a>
       <p>Innovation &amp; Knowledge Solutions</p>
       <p class="footer__copy">© <span id="year"></span> SofIA Labs. Todos los derechos reservados.</p>
     </div>
